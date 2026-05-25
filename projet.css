@@ -1,65 +1,188 @@
-#titre{
-    
-    color:white;
-    font-size: 30px;
+/* --- Styles Généraux --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(240, 240, 240);
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- En-tête --- */
+#titre {
+    color: white;
+    font-size: 24px;
     text-align: center;
-    border: solid ;
+    border: solid 2px green;
     border-radius: 10px;
     background-color: rgb(14, 117, 14);
+    padding: 15px;
+    margin: 10px auto;
+    max-width: 90%;
 }
-#img1{
-border-radius: 50px;
-margin-block: -20px;
 
-    display: block;
-    height: 240px;
-    width: 180px;
-    margin-left: 15px;
-    
+/* --- Section Carte Profil (Ousmane) --- */
+.profile-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    justify-content: space-between;
 }
-span{
-    font-size: 15px;
-    color:white;
-    background-color: green;
 
+#img1 {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
 }
-#bien{
-    margin-top: 150px;
-   
-    font-size: 60px;
+
+.profile-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+#nom {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#tel {
+    font-size: 24px;
+    color: rgb(14, 117, 14);
+    font-weight: bold;
+}
+
+.profile-badges {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+#mrc {
+    height: 80px;
+    width: auto;
+    border-radius: 10px;
+}
+
+#bouton {
+    height: 60px;
+    width: auto;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#bouton:hover {
+    transform: scale(1.05);
+}
+
+/* --- Section Vitrine / Bannières --- */
+.showcase {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.showcase img {
+    border-radius: 20px;
+    object-fit: cover;
+    height: 300px;
+}
+
+#img3 { flex: 2; width: 100%; }
+#img2 { flex: 1; width: 100%; }
+
+/* --- Section Catalogue --- */
+#bien {
+    margin: 40px 0 20px 0;
+    font-size: 32px;
     color: rgb(14, 117, 14);
     text-align: center;
     font-weight: bold;
 }
-#nom{
-    margin-left: 420px;
-    font-size: 60px;
-    
-    margin-block: 10px;
-}
-#tel{
-    margin-left: 420px;
-    margin-block: -20px;
-    font-size: 60px;
-    
+
+/* Grille d'images automatique et responsive */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
 }
 
-    
-  body{
-    background-color: rgb(240, 240, 240);
-  }
-   
-#mrc{
-    height: 240px;
-    width: 390px;
-   margin-top: -150px;
-   border-radius: 15px;
-    
+.product-img {
+    height: 260px;
+    width: 100%;
+    max-width: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
-#bouton{
-    height: 240px;
-    width: 180px;
-    margin-left: 1100px;
-    margin-top: -250px;
-    border-radius: 30px;
+
+.product-img:hover {
+    transform: translateY(-5px);
+}
+
+/* =======================================================
+   MEDIA QUERIES - RESPONSIVE POUR MOBILE
+   ======================================================= */
+@media (max-width: 768px) {
+    #titre {
+        font-size: 18px;
+    }
+
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    #img1 {
+        margin: 0 auto;
+    }
+
+    #nom { font-size: 22px; }
+    #tel { font-size: 20px; }
+
+    .profile-badges {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .showcase {
+        flex-direction: column;
+    }
+
+    .showcase img {
+        height: 200px;
+    }
+
+    #bien {
+        font-size: 22px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .product-img {
+        height: 180px;
+    }
 }
